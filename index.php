@@ -32,7 +32,7 @@
 									<ul class="list-group">
 										<?php
 										while($lokasi = mysqli_fetch_array($sql, MYSQLI_ASSOC)) : ?>
-										  <li class="list-group-item" map-title="<?= $lokasi['nama_lokasi'] ?>" map-src="<?= $lokasi['url'] ?>" onclick="selectMap(this)"><?= $lokasi['nama_lokasi'] ?></li>
+										  <li class="list-group-item map-class" map-title="<?= $lokasi['nama_lokasi'] ?>" map-src="<?= $lokasi['url'] ?>" onclick="selectMap(this)"><?= $lokasi['nama_lokasi'] ?></li>
 										<?php endwhile; ?>
 									</ul>
 								</div>
@@ -53,14 +53,22 @@
 		const defaultMap = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127441.5731561793!2d114.7301833890775!3d-3.459147814678052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de686ad57aa9fdf%3A0xd1f27863d3f52ead!2sBanjarbaru%2C%20Kota%20Banjar%20Baru%2C%20Kalimantan%20Selatan!5e0!3m2!1sid!2sid!4v1624874336019!5m2!1sid!2sid";
 		
 		const selectMap = (target) => {
+			const mapClass = document.querySelectorAll('.map-class');
+			
 			const map = document.querySelector('#map');
 			const title = document.querySelector('#title');
 
-			const mapTitle = target.getAttribute('map-title')
-			const mapLink = target.getAttribute('map-src')
+			const mapTitle = target.getAttribute('map-title');
+			const mapLink = target.getAttribute('map-src');
 
 			map.src = mapLink;
 			title.innerText = mapTitle;
+
+			mapClass.forEach(res => {
+				res.classList.remove('active')
+			});
+
+			target.classList.add('active');
 		}
 	</script>
 </body>
