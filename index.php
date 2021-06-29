@@ -23,7 +23,7 @@
 							<ul class="list-group">
 								<?php
 								while($lokasi = mysqli_fetch_array($sql, MYSQLI_ASSOC)) : ?>
-								  <li class="list-group-item map-class" map-title="<?= $lokasi['nama_lokasi'] ?>" map-src="<?= $lokasi['url'] ?>" onclick="selectMap(this)"><?= $lokasi['nama_lokasi'] ?></li>
+								  <li class="list-group-item telunjuk map-class" map-title="<?= $lokasi['nama_lokasi'] ?>" map-src="<?= $lokasi['url'] ?>" onclick="selectMap(this)"><?= $lokasi['nama_lokasi'] ?></li>
 								<?php endwhile; ?>
 							</ul>
 						</div>
