@@ -1,6 +1,6 @@
 <nav>
   <div class="logo">
-    <h4>Sudah diganti</h4>
+    <h4>GIS App</h4>
   </div>
 
   <ul>
