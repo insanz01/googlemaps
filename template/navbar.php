@@ -1,6 +1,6 @@
 <nav>
   <div class="logo">
-    <h4>Isi kena</h4>
+    <h4>Sudah diganti</h4>
   </div>
 
   <ul>
